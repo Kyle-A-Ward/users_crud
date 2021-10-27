@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename="style.css") }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <h1>Edit User {{user.id}}</h1>
+    <a href="http://localhost:5000/">Home</a>
+    <form action="/edit_save/{{user.id}}" method="POST">
+        <label for="firstname">First Name:</label>
+        <input type="text" name="firstname" value="{{user.first_name}}">
+        <label for="lastname">Last Name:</label>
+        <input type="text" name="lastname" value="{{user.last_name}}">
+        <label for="email" >Email:</label>
+        <input type="text" name="email" value="{{user.email}}">
+        <input type="submit" value="Update">
+    </form> 
+</body>
+</html>
